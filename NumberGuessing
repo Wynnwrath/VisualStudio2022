@@ -1,0 +1,40 @@
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int secret_Num = 100;
+        int tries = 0;
+        int guess = 0;
+        int prevNum = 0;
+        bool gameOver = false;
+        
+        while(!gameOver) {
+            Console.WriteLine("Guess the number: ");
+            guess = Convert.ToInt32(Console.ReadLine());
+            
+            if(guess > secret_Num){
+                Console.WriteLine("Too Big!");
+                
+            }
+            if(guess < secret_Num){
+                Console.WriteLine("Too Small!");
+                
+            }
+            if(guess == secret_Num){
+                Console.WriteLine("You guessed it!");
+                gameOver = true;
+            }
+            if(guess == prevNum) {
+                Console.WriteLine("Tries: " + tries);
+            }
+            else {
+                tries++;
+                prevNum = guess;
+                Console.WriteLine("Tries: " + tries++);
+                
+            }
+        }
+    }
+}
